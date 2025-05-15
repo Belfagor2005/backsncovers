@@ -1,0 +1,9 @@
+Package: enigma2-plugin-extensions-backsncovers
+Version: 1.0-r0
+Description: Find Backdrops and Covers for Movielist
+Architecture: all
+Section: extra
+Priority: optional
+Maintainer: schomi
+Homepage: http://www.vuplus-support.org
+Source: enigma2-plugin-extensions-backsncovers
