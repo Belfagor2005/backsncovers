@@ -1,0 +1,170 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: backsNcovers\n"
+"POT-Creation-Date: 2025-05-15 14:10+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: lululla\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: backsNcovers.py\n"
+
+#: backsNcovers.py:63
+msgid "backsNcovers"
+msgstr ""
+
+#: backsNcovers.py:64
+msgid "Find Backdrops and Covers for Movielist"
+msgstr ""
+
+#: backsNcovers.py:113
+msgid "backsNcovers Setup"
+msgstr ""
+
+#: backsNcovers.py:124
+msgid "OK"
+msgstr ""
+
+#: backsNcovers.py:125
+msgid "Cancel"
+msgstr ""
+
+#: backsNcovers.py:136
+msgid "Picture resolution:"
+msgstr ""
+
+#: backsNcovers.py:137
+msgid "Language:"
+msgstr ""
+
+#: backsNcovers.py:138
+msgid "Start with Backdrops:"
+msgstr ""
+
+#: backsNcovers.py:139
+msgid "FileBot Pattern:"
+msgstr ""
+
+#: backsNcovers.py:140
+msgid "Close after selection:"
+msgstr ""
+
+#: backsNcovers.py:198
+msgid "virtual folder not possible!"
+msgstr ""
+
+#: backsNcovers.py:202
+msgid "Show Backdrops or Covers"
+msgstr ""
+
+#: backsNcovers.py:203 backsNcovers.py:230
+msgid "Search Text ..."
+msgstr ""
+
+#: backsNcovers.py:204 backsNcovers.py:231
+msgid "Find Series"
+msgstr ""
+
+#: backsNcovers.py:205 backsNcovers.py:232
+msgid "Find Movies"
+msgstr ""
+
+#: backsNcovers.py:206
+msgid "Setup"
+msgstr ""
+
+#: backsNcovers.py:207
+msgid "Exit"
+msgstr ""
+
+#: backsNcovers.py:208
+msgid "Save Cover or Backdrop"
+msgstr ""
+
+#: backsNcovers.py:209
+msgid "Find all movies or series"
+msgstr ""
+
+#: backsNcovers.py:222 backsNcovers.py:226 backsNcovers.py:276
+msgid "Backdrops"
+msgstr ""
+
+#: backsNcovers.py:223 backsNcovers.py:225 backsNcovers.py:272
+msgid "Covers"
+msgstr ""
+
+#: backsNcovers.py:228
+msgid "TMDb search"
+msgstr ""
+
+#: backsNcovers.py:261
+msgid "TMDb does not respond, try again later!"
+msgstr ""
+
+#: backsNcovers.py:265
+#, python-format
+msgid "TMDb search, %s for %s"
+msgstr ""
+
+#: backsNcovers.py:302
+msgid "Search for:"
+msgstr ""
+
+#: backsNcovers.py:316
+#, python-format
+msgid "Loading %s for %s"
+msgstr ""
+
+#: backsNcovers.py:324
+#, python-format
+msgid "No results found for %s!"
+msgstr ""
+
+#: backsNcovers.py:376
+#, python-format
+msgid "No movie results, %s for %s"
+msgstr ""
+
+#: backsNcovers.py:378
+#, python-format
+msgid "No series results, %s for %s"
+msgstr ""
+
+#: backsNcovers.py:380
+#, python-format
+msgid "No results, %s for %s"
+msgstr ""
+
+#: backsNcovers.py:385
+#, python-brace-format
+msgid "Error: {0}"
+msgstr ""
+
+#: backsNcovers.py:442 backsNcovers.py:449
+#, python-format
+msgid "TMDb result, %s"
+msgstr ""
+
+#: backsNcovers.py:442
+msgid " ... not saved!"
+msgstr ""
+
+#: backsNcovers.py:449
+msgid " ... saved!"
+msgstr ""
+
+#: backsNcovers.py:462
+#, python-format
+msgid "TMDb movie results, %s %s for %s"
+msgstr ""
+
+#: backsNcovers.py:464
+#, python-format
+msgid "TMDb series results, %s %s for %s"
+msgstr ""
