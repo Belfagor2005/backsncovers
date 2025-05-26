@@ -27,17 +27,16 @@ from twisted.internet import defer
 
 # Enigma2 - Components
 from Components.AVSwitch import AVSwitch
-from Components.ActionMap import ActionMap, HelpableActionMap
-from Components.ConfigList import ConfigListScreen
+from Components.ActionMap import HelpableActionMap
 from Components.GUIComponent import GUIComponent
 from Components.Label import Label
-from Components.Sources.StaticText import StaticText
-from Components.config import config, configfile, getConfigListEntry
+from Components.config import config
 
 # Enigma2 - Screens
 from Screens.HelpMenu import HelpableScreen
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
+from Screens.Setup import Setup
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 import skin
 
@@ -123,59 +122,16 @@ class PicLoader:
 		del self.picload
 
 
-class backsNcoversConfigScreen(Screen, ConfigListScreen):
-	def __init__(self, session):
-		Screen.__init__(self, session)
-		self.skinName = ["backsNcoversConfigScreen", "Setup"]
-		self.setup_title = _("backsNcovers Setup")
+class backsNcoversConfigScreen(Setup):
+	def __init__(self, session, parent=None):
+		Setup.__init__(self, session, setup="M3UConverterSettings", plugin="Extensions/M3UConverter")
+		self.parent = parent
 
-		self.onChangedEntry = []
-		self.list = []
-		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
-
-		self["actions"] = ActionMap(
-			["bNcActions"],
-			{
-				"cancel": self.keyCancel,
-				"save": self.keyOK,
-				"red": self.keyCancel,
-				"green": self.keyGreen
-			},
-			-2
-		)
-
-		self["key_green"] = StaticText(_("OK"))
-		self["key_red"] = StaticText(_("Cancel"))
-
-		self.list = []
-		self.createConfigList()
-		self.onLayoutFinish.append(self.layoutFinished)
-
-	def layoutFinished(self):
-		self.setTitle(pname + " (" + pversion + " - " + pdate + ")")
-
-	def createConfigList(self):
-		self.list = []
-		self.list.append(getConfigListEntry(_("Picture resolution:"), config.plugins.backsNcovers.themoviedb_coversize))
-		self.list.append(getConfigListEntry(_("Language:"), config.plugins.backsNcovers.language))
-		self.list.append(getConfigListEntry(_("Start with Backdrops:"), config.plugins.backsNcovers.backdrops))
-		self.list.append(getConfigListEntry(_("FileBot Pattern:"), config.plugins.backsNcovers.filebot))
-		self.list.append(getConfigListEntry(_("Close after selection:"), config.plugins.backsNcovers.closeafter))
-		self["config"].list = self.list
-		self["config"].setList(self.list)
-
-	def changedEntry(self):
-		for x in self.onChangedEntry:
-			x()
-
-	def keyGreen(self):
-		for x in self["config"].list:
-			x[1].save()
-		configfile.save()
-		self.close()
+	def keySave(self):
+		Setup.keySave(self)
 
 	def keyOK(self):
-		self.keyGreen()
+		Setup.keySave(self)
 
 
 class backsNcoversScreen(Screen, HelpableScreen):

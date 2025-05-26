@@ -1,9 +1,9 @@
 <setupxml>
-	<setup key="backsNcovers" showOpenWebIF="1" title="BacksNcovers">
-		<item level="0" text="Bilder Auflösung:">config.plugins.backsNcovers.themoviedb_coversize</item>
-		<item level="0" text="Sprache:">config.plugins.backsNcovers.language</item>
-		<item level="0" text="Starte mit Backdrops:">config.plugins.backsNcovers.backdrops</item>
+	<setup key="backsNcoversConfigScreen" showOpenWebIF="1" title="BacksNcovers">
+		<item level="0" text="Picture resolution:">config.plugins.backsNcovers.themoviedb_coversize</item>
+		<item level="0" text="Language:">config.plugins.backsNcovers.language</item>
+		<item level="0" text="Start with Backdrops:">config.plugins.backsNcovers.backdrops</item>
 		<item level="0" text="FileBot Schema:">config.plugins.backsNcovers.filebot</item>
-		<item level="0" text="Nach Auswahl schließen:">config.plugins.backsNcovers.closeafter</item>		
+		<item level="0" text="Close after selection:">config.plugins.backsNcovers.closeafter</item>		
 	</setup>
 </setupxml>

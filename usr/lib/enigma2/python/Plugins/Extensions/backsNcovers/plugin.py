@@ -31,7 +31,7 @@ config.plugins.backsNcovers.filebot = ConfigYesNo(default=False)
 config.plugins.backsNcovers.closeafter = ConfigYesNo(default=False)
 
 
-def main(session, service, **kwargs):
+def main(session, service=None, **kwargs):
 	try:
 		from importlib import reload
 	except:
@@ -45,4 +45,12 @@ def main(session, service, **kwargs):
 
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(name=_("backsNcovers"), description=_("Find Backdrops & Covers ..."), where=PluginDescriptor.WHERE_MOVIELIST, fnc=main, needsRestart=False)]
+	return [
+		PluginDescriptor(
+			name=_("backsNcovers"),
+			description=_("Find Backdrops & Covers ..."),
+			where=PluginDescriptor.WHERE_MOVIELIST,
+			fnc=main,
+			needsRestart=False
+		)
+	]
