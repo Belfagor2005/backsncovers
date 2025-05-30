@@ -5,7 +5,7 @@
 version='1.3'
 changelog='\nAdd ChannelUp / ChannelDown in Player\nFix major'
 ##############################################################
-TMPPATH=/tmp/backsNcovers-main
+TMPPATH=/tmp/backsncovers-main
 FILEPATH=/tmp/main.tar.gz
 
 if [ ! -d /usr/lib64 ]; then
@@ -101,7 +101,7 @@ sleep 2
 
 wget --no-check-certificate 'https://github.com/Belfagor2005/backsncovers/archive/refs/heads/main.tar.gz'
 tar -xzf main.tar.gz
-cp -r 'backsNcovers-main/usr' '/'
+cp -r 'backsncovers-main/usr' '/'
 set +e
 cd
 sleep 2

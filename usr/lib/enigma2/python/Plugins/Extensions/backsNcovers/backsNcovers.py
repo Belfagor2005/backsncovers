@@ -378,7 +378,7 @@ class backsNcoversScreen(Screen, HelpableScreen):
 		if exists(path):
 			self.piclist.append(((title, path, id, type),))
 		else:
-			print(f"Image {path} not found!")
+			print("Image path not found!: %s " % str(path))
 
 		self['list'].setList(self.piclist, type)
 
