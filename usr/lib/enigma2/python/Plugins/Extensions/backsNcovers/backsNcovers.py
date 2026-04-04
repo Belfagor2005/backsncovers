@@ -56,7 +56,7 @@ from enigma import (
 )
 
 # Local imports
-from . import _
+from . import _, __version__
 from . import tmdbsimple as tmdb
 
 
@@ -64,7 +64,6 @@ tmdb.API_KEY = b64decode('M2MzZWZjZjQ3YzM1Nzc1NTg4MTJiYjlkNjQwMTlkNjU=')
 
 pname = _("backsNcovers")
 pdesc = _("Find Backdrops and Covers for Movielist")
-pversion = "v.1.0-r0"
 pdate = "20250515"
 tempDir = "/tmp/backsNcovers/"
 

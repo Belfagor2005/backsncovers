@@ -8,6 +8,7 @@ import gettext
 
 PluginLanguageDomain = "backsNcovers"
 PluginLanguagePath = "Extensions/backsNcovers/locale"
+__version__ = "v.1.0-r0"
 
 
 def localeInit():
