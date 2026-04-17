@@ -1,6 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import, print_function
+from Components.config import config, ConfigSelection, ConfigSubsection, ConfigYesNo
+from Plugins.Plugin import PluginDescriptor
+from importlib import reload
+
+from . import _
+from . import backsNcovers
+
 
 #######################################################################
 # maintainer: <schomi@vuplus-support.org>
@@ -12,16 +18,8 @@ from __future__ import absolute_import, print_function
 # source code of your modifications.
 #
 # modded and fix from lululla 20250515
+# porting to python3 from lululla 20260417
 #######################################################################
-
-# Enigma2
-from Components.config import config, ConfigSelection, ConfigSubsection, ConfigYesNo
-
-# Plugin internals
-from Plugins.Plugin import PluginDescriptor
-from . import _
-from . import backsNcovers
-
 
 config.plugins.backsNcovers = ConfigSubsection()
 config.plugins.backsNcovers.themoviedb_coversize = ConfigSelection(default="w500", choices=["w92", "w185", "w500", "original"])
@@ -32,25 +30,21 @@ config.plugins.backsNcovers.closeafter = ConfigYesNo(default=False)
 
 
 def main(session, service=None, **kwargs):
-	try:
-		from importlib import reload
-	except:
-		from imp import reload
-	reload(backsNcovers)
-	try:
-		session.open(backsNcovers.backsNcoversScreen, service, session.current_dialog, **kwargs)
-	except:
-		import traceback
-		traceback.print_exc()
+    reload(backsNcovers)
+    try:
+        session.open(backsNcovers.backsNcoversScreen, service, session.current_dialog, **kwargs)
+    except:
+        import traceback
+        traceback.print_exc()
 
 
 def Plugins(**kwargs):
-	return [
-		PluginDescriptor(
-			name=_("backsNcovers"),
-			description=_("Find Backdrops & Covers ..."),
-			where=PluginDescriptor.WHERE_MOVIELIST,
-			fnc=main,
-			needsRestart=False
-		)
-	]
+    return [
+        PluginDescriptor(
+            name=_("backsNcovers"),
+            description=_("Find Backdrops & Covers ..."),
+            where=PluginDescriptor.WHERE_MOVIELIST,
+            fnc=main,
+            needsRestart=False
+        )
+    ]

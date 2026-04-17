@@ -8,22 +8,22 @@ import gettext
 
 PluginLanguageDomain = "backsNcovers"
 PluginLanguagePath = "Extensions/backsNcovers/locale"
-__version__ = "v.1.0-r0"
+__version__ = "v.1.4"
 
 
 def localeInit():
-	lang = language.getLanguage()[:2]
-	environ["LANGUAGE"] = lang
-	print("[backsNcovers] set language to ", lang)
-	gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
+    lang = language.getLanguage()[:2]
+    environ["LANGUAGE"] = lang
+    print("[backsNcovers] set language to ", lang)
+    gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
 
 
 def _(txt):
-	t = gettext.dgettext(PluginLanguageDomain, txt)
-	if t == txt:
-		print("[backsNcovers] fallback to default Enigma2 Translation for", txt)
-		t = gettext.gettext(txt)
-	return t
+    t = gettext.dgettext(PluginLanguageDomain, txt)
+    if t == txt:
+        print("[backsNcovers] fallback to default Enigma2 Translation for", txt)
+        t = gettext.gettext(txt)
+    return t
 
 
 localeInit()

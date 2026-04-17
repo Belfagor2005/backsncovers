@@ -1,5 +1,18 @@
 # -*- coding: utf-8 -*-
 
+import os
+from .account import Account, Authentication, GuestSessions, Lists
+from .base import APIKeyError
+from .changes import Changes
+from .configuration import Configuration, Certifications
+from .discover import Discover
+from .find import Find, Trending
+from .genres import Genres
+from .movies import Movies, Collections, Companies, Keywords, Reviews
+from .people import People
+from .tv import TV, TV_Seasons, TV_Episodes, TV_Episode_Groups, TV_Changes, Networks
+
+
 """
 tmdbsimple
 ~~~~~~~~~~
@@ -21,22 +34,6 @@ __version__ = '2.9.2'
 __author__ = 'Celia Oakley'
 __copyright__ = 'Copyright (c) 2013-2025 Celia Oakley'
 __license__ = 'GPLv3'
-
-import os
-import requests
-
-from .account import Account, Authentication, GuestSessions, Lists
-from .base import APIKeyError
-from .changes import Changes
-from .configuration import Configuration, Certifications
-from .discover import Discover
-from .find import Find, Trending
-from .genres import Genres
-from .movies import Movies, Collections, Companies, Keywords, Reviews
-from .people import People, Credits
-from .search import Search
-from .tv import TV, TV_Seasons, TV_Episodes, TV_Episode_Groups, TV_Changes, Networks
-
 __all__ = ['Account', 'Authentication', 'GuestSessions', 'Lists',
            'APIKeyError',
            'Changes',

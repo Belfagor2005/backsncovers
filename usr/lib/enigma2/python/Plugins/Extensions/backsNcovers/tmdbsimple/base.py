@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import json
+import requests
+
 """
 tmdbsimple.base
 ~~~~~~~~~~~~~~~
@@ -10,9 +13,6 @@ Created by Celia Oakley on 2013-10-31.
 :copyright: (c) 2013-2025 by Celia Oakley
 :license: GPLv3, see LICENSE for more details
 """
-
-import json
-import requests
 
 
 class APIKeyError(Exception):
