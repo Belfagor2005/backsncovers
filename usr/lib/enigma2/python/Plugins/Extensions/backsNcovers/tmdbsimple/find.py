@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from .base import TMDB
-
 """
 tmdbsimple.find
 ~~~~~~~~~~~~~~~
@@ -9,9 +7,55 @@ This module implements the Find functionality of tmdbsimple.
 
 Created by Celia Oakley on 2013-10-31.
 
-:copyright: (c) 2013-2025 by Celia Oakley
+:copyright: (c) 2013-2022 by Celia Oakley
 :license: GPLv3, see LICENSE for more details
 """
+
+from .base import TMDB
+# --------------------------- Logfile -------------------------------
+import datetime
+import codecs
+from shutil import copyfile
+from os import remove
+from os.path import isfile
+########################### log file loeschen ##################################
+
+myfile="/tmp/tmdb-find.log"
+
+## If file exists, delete it ##
+if isfile(myfile):
+    remove(myfile)
+############################## File copieren ############################################
+
+
+###########################  log file anlegen ##################################
+# kitte888 logfile anlegen die eingabe in logstatus
+
+logstatus = "on"
+
+# ________________________________________________________________________________
+
+def write_log(msg):
+    if logstatus == ('on'):
+        with open(myfile, "a") as log:
+
+            log.write(datetime.date.today().strftime("%Y/%d/%m, %H:%M:%S.%f") + ": " + msg + "\n")
+
+            return
+    return
+
+# ****************************  test ON/OFF Logfile ************************************************
+
+
+def logout(data):
+    if logstatus == ('on'):
+        write_log(data)
+        return
+    return
+
+
+# so muss das commando aussehen , um in den file zu schreiben
+logout(data="start")
 
 
 class Find(TMDB):

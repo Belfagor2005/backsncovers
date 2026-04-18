@@ -17,7 +17,7 @@
 from base64 import b64decode
 from os.path import exists
 from os import mkdir
-from re import escape, sub, I, S, search as re_search
+from re import compile, escape, sub, I, S, DOTALL, IGNORECASE, search as re_search
 from shutil import copy, rmtree
 import subprocess
 from twisted.internet import defer
@@ -53,8 +53,8 @@ from . import _
 from . import tmdbsimple as tmdb
 
 
-tmdb.API_KEY = b64decode('ZDQyZTZiODIwYTE1NDFjYzY5Y2U3ODk2NzFmZWJhMzk=')
-
+tmdb.API_KEY = b64decode('NzNmNjU4ZDMyYzMxNWE2YzZmNDY5NjY0MjYwYjBmZTI=')
+tmdb.REQUESTS_TIMEOUT = (5, 30)
 pname = _("backsNcovers")
 pdesc = _("Find Backdrops and Covers for Movielist")
 pdate = "20260417"
@@ -62,6 +62,52 @@ tempDir = "/tmp/backsNcovers/"
 
 
 def cleanFile(text):
+    cutlist = [
+        'x264', '720p', '1080p', '1080i', 'PAL', 'GERMAN', 'ENGLiSH', 'WS', 'DVDRiP', 'UNRATED',
+        'RETAIL', 'Web-DL', 'DL', 'LD', 'MiC', 'MD', 'DVDR', 'BDRiP', 'BLURAY', 'DTS', 'UNCUT', 'ANiME',
+        'AC3MD', 'AC3', 'AC3D', 'TS', 'DVDSCR', 'COMPLETE', 'INTERNAL', 'DTSD', 'XViD', 'DIVX', 'DUBBED',
+        'LINE.DUBBED', 'DD51', 'DVDR9', 'DVDR5', 'h264', 'AVC', 'WEBHDTVRiP', 'WEBHDRiP', 'WEBRiP',
+        'WEBHDTV', 'WebHD', 'HDTVRiP', 'HDRiP', 'HDTV', 'ITUNESHD', 'REPACK', 'SYNC'
+    ]
+    extensions = ['.wmv', '.flv', '.ts', '.m2ts', '.mkv', '.avi', '.mpeg', '.mpg', '.iso', '.mp4']
+
+    for ext in extensions:
+        text = text.replace(ext, '')
+
+    for word in cutlist:
+        pattern = r'(^|[\._\-\+])' + escape(word) + r'([\._\-\+]|$)'
+        text = sub(pattern, ' ', text, flags=I)
+
+    advanced_regex = compile(
+        r'([\(\[]).*?([\)\]])|'       # Tutto tra parentesi tonde o quadre
+        r'(: odc.\d+)|'               # : odc.x
+        r'(\d+: odc.\d+)|'            # x: odc.y
+        r'(\d+ odc.\d+)|(:)|'         # x odc.y o :
+        r'!|'                         # Punti esclamativi
+        r'/.*|'                       # Tutto dopo /
+        r'\|\s[0-9]+\+|'              # | x+
+        r'[0-9]+\+|'                  # x+
+        r'\s\d{4}\Z|'                 # Anno a 4 cifre alla fine
+        r'([\(\[\|].*?[\)\]\|])|'     # Testo tra parentesi/barre
+        r'(\"|\"\.|\"\,|\.)\s.+|'     # Testo dopo virgolette/punto
+        r'\"|:|'                      # Virgolette e due punti
+        r'\*|'                        # Asterischi
+        r'[Ss][0-9]+[Ee][0-9]+|'      # S01E02, S1E2
+        r'\d+[xX]\d+|'                # 1x02, 1X2
+        r'\(\d{4}\)|'                 # (2024)
+        r'\d+$',                      # Numeri finali
+        DOTALL | IGNORECASE
+    )
+    text = advanced_regex.sub('', text)
+
+    text = sub(r'[\.\-\_\+]', ' ', text)
+
+    text = sub(r'\s+', ' ', text).strip()
+
+    return text
+
+
+def cleanFile2(text):
     cutlist = [
         'x264', '720p', '1080p', '1080i', 'PAL', 'GERMAN', 'ENGLiSH', 'WS', 'DVDRiP', 'UNRATED',
         'RETAIL', 'Web-DL', 'DL', 'LD', 'MiC', 'MD', 'DVDR', 'BDRiP', 'BLURAY', 'DTS', 'UNCUT', 'ANiME',
@@ -309,8 +355,13 @@ class backsNcoversScreen(Screen, HelpableScreen):
                     identity = tmdb.TV(movies['id'])
                     self.field = "name"
 
-                images = identity.images(language=self.lang)
-
+                # images = identity.images(language=self.lang)
+                try:
+                    images = identity.images(language=self.lang)
+                except Exception as e:
+                    print("[backsNcovers] Network error:", str(e))
+                    self['searchinfo'].setText(_("Network error: cannot reach TMDb"))
+                    return
                 if self.backdrop:
                     for results in images['backdrops']:
                         if results is not []:

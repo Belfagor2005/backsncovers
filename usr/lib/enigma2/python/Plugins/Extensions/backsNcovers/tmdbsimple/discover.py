@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from .base import TMDB
-
 """
 tmdbsimple.discover
 ~~~~~~~~~~~~~~~~~~~
@@ -9,9 +7,11 @@ This module implements the Discover functionality of tmdbsimple.
 
 Created by Celia Oakley on 2013-10-31.
 
-:copyright: (c) 2013-2025 by Celia Oakley
+:copyright: (c) 2013-2022 by Celia Oakley
 :license: GPLv3, see LICENSE for more details
 """
+
+from .base import TMDB
 
 
 class Discover(TMDB):

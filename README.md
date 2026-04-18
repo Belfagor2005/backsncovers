@@ -1,7 +1,7 @@
 # 🎬 backsNcovers
 
 [![Python package](https://github.com/Belfagor2005/backsncovers/actions/workflows/pylint.yml/badge.svg)](https://github.com/Belfagor2005/backsncovers/actions/workflows/pylint.yml)![](https://komarev.com/ghpvc/?username=Belfagor2005)
-![Version](https://img.shields.io/badge/Version-1.4-blue.svg)
+![Version](https://img.shields.io/badge/Version-1.5-blue.svg)
 ![Python](https://img.shields.io/badge/Python3-only-orange.svg)
 
 

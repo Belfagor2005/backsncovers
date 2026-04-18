@@ -1,8 +1,8 @@
 #!/bin/bash
 ## setup command=wget -q --no-check-certificate https://raw.githubusercontent.com/Belfagor2005/backsncovers/main/installer.sh -O - | /bin/sh
 
-version='1.4'
-changelog='Pyhton3 porting'
+version='1.5'
+changelog='Fix Tmdb api\nPyhton3 porting'
 
 TMPPATH=/tmp/backsncovers-install
 FILEPATH=/tmp/backsncovers-main.tar.gz
