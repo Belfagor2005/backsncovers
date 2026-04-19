@@ -63,13 +63,67 @@ tempDir = "/tmp/backsNcovers/"
 
 def cleanFile(text):
     cutlist = [
-        'x264', '720p', '1080p', '1080i', 'PAL', 'GERMAN', 'ENGLiSH', 'WS', 'DVDRiP', 'UNRATED',
-        'RETAIL', 'Web-DL', 'DL', 'LD', 'MiC', 'MD', 'DVDR', 'BDRiP', 'BLURAY', 'DTS', 'UNCUT', 'ANiME',
-        'AC3MD', 'AC3', 'AC3D', 'TS', 'DVDSCR', 'COMPLETE', 'INTERNAL', 'DTSD', 'XViD', 'DIVX', 'DUBBED',
-        'LINE.DUBBED', 'DD51', 'DVDR9', 'DVDR5', 'h264', 'AVC', 'WEBHDTVRiP', 'WEBHDRiP', 'WEBRiP',
-        'WEBHDTV', 'WebHD', 'HDTVRiP', 'HDRiP', 'HDTV', 'ITUNESHD', 'REPACK', 'SYNC'
-    ]
-    extensions = ['.wmv', '.flv', '.ts', '.m2ts', '.mkv', '.avi', '.mpeg', '.mpg', '.iso', '.mp4']
+        'x264',
+        '720p',
+        '1080p',
+        '1080i',
+        'PAL',
+        'GERMAN',
+        'ENGLiSH',
+        'WS',
+        'DVDRiP',
+        'UNRATED',
+        'RETAIL',
+        'Web-DL',
+        'DL',
+        'LD',
+        'MiC',
+        'MD',
+        'DVDR',
+        'BDRiP',
+        'BLURAY',
+        'DTS',
+        'UNCUT',
+        'ANiME',
+        'AC3MD',
+        'AC3',
+        'AC3D',
+        'TS',
+        'DVDSCR',
+        'COMPLETE',
+        'INTERNAL',
+        'DTSD',
+        'XViD',
+        'DIVX',
+        'DUBBED',
+        'LINE.DUBBED',
+        'DD51',
+        'DVDR9',
+        'DVDR5',
+        'h264',
+        'AVC',
+        'WEBHDTVRiP',
+        'WEBHDRiP',
+        'WEBRiP',
+        'WEBHDTV',
+        'WebHD',
+        'HDTVRiP',
+        'HDRiP',
+        'HDTV',
+        'ITUNESHD',
+        'REPACK',
+        'SYNC']
+    extensions = [
+        '.wmv',
+        '.flv',
+        '.ts',
+        '.m2ts',
+        '.mkv',
+        '.avi',
+        '.mpeg',
+        '.mpg',
+        '.iso',
+        '.mp4']
 
     for ext in extensions:
         text = text.replace(ext, '')
@@ -109,14 +163,68 @@ def cleanFile(text):
 
 def cleanFile2(text):
     cutlist = [
-        'x264', '720p', '1080p', '1080i', 'PAL', 'GERMAN', 'ENGLiSH', 'WS', 'DVDRiP', 'UNRATED',
-        'RETAIL', 'Web-DL', 'DL', 'LD', 'MiC', 'MD', 'DVDR', 'BDRiP', 'BLURAY', 'DTS', 'UNCUT', 'ANiME',
-        'AC3MD', 'AC3', 'AC3D', 'TS', 'DVDSCR', 'COMPLETE', 'INTERNAL', 'DTSD', 'XViD', 'DIVX', 'DUBBED',
-        'LINE.DUBBED', 'DD51', 'DVDR9', 'DVDR5', 'h264', 'AVC', 'WEBHDTVRiP', 'WEBHDRiP', 'WEBRiP',
-        'WEBHDTV', 'WebHD', 'HDTVRiP', 'HDRiP', 'HDTV', 'ITUNESHD', 'REPACK', 'SYNC'
-    ]
+        'x264',
+        '720p',
+        '1080p',
+        '1080i',
+        'PAL',
+        'GERMAN',
+        'ENGLiSH',
+        'WS',
+        'DVDRiP',
+        'UNRATED',
+        'RETAIL',
+        'Web-DL',
+        'DL',
+        'LD',
+        'MiC',
+        'MD',
+        'DVDR',
+        'BDRiP',
+        'BLURAY',
+        'DTS',
+        'UNCUT',
+        'ANiME',
+        'AC3MD',
+        'AC3',
+        'AC3D',
+        'TS',
+        'DVDSCR',
+        'COMPLETE',
+        'INTERNAL',
+        'DTSD',
+        'XViD',
+        'DIVX',
+        'DUBBED',
+        'LINE.DUBBED',
+        'DD51',
+        'DVDR9',
+        'DVDR5',
+        'h264',
+        'AVC',
+        'WEBHDTVRiP',
+        'WEBHDRiP',
+        'WEBRiP',
+        'WEBHDTV',
+        'WebHD',
+        'HDTVRiP',
+        'HDRiP',
+        'HDTV',
+        'ITUNESHD',
+        'REPACK',
+        'SYNC']
 
-    extensions = ['.wmv', '.flv', '.ts', '.m2ts', '.mkv', '.avi', '.mpeg', '.mpg', '.iso', '.mp4']
+    extensions = [
+        '.wmv',
+        '.flv',
+        '.ts',
+        '.m2ts',
+        '.mkv',
+        '.avi',
+        '.mpeg',
+        '.mpg',
+        '.iso',
+        '.mp4']
 
     # Remove extensions
     for ext in extensions:
@@ -135,7 +243,27 @@ def cleanFile2(text):
 
 
 def cleanEnd(text):
-    text = text.replace('.wmv', '').replace('.flv', '').replace('.ts', '').replace('.m2ts', '').replace('.mkv', '').replace('.avi', '').replace('.mpeg', '').replace('.mpg', '').replace('.iso', '').replace('.mp4', '')
+    text = text.replace(
+        '.wmv',
+        '').replace(
+        '.flv',
+        '').replace(
+            '.ts',
+            '').replace(
+                '.m2ts',
+                '').replace(
+                    '.mkv',
+                    '').replace(
+                        '.avi',
+                        '').replace(
+                            '.mpeg',
+                            '').replace(
+                                '.mpg',
+                                '').replace(
+                                    '.iso',
+                                    '').replace(
+                                        '.mp4',
+        '')
     return text
 
 
@@ -149,7 +277,8 @@ class PicLoader:
         self.picload = ePicLoad()
         if (not sc):
             sc = AVSwitch().getFramebufferScale()
-        self.picload.setPara((width, height, sc[0], sc[1], False, 1, "#00000000"))
+        self.picload.setPara(
+            (width, height, sc[0], sc[1], False, 1, "#00000000"))
 
     def load(self, filename):
         self.picload.startDecode(filename, 0, 0, False)
@@ -162,7 +291,11 @@ class PicLoader:
 
 class backsNcoversConfigScreen(Setup):
     def __init__(self, session, parent=None):
-        Setup.__init__(self, session, setup="M3UConverterSettings", plugin="Extensions/M3UConverter")
+        Setup.__init__(
+            self,
+            session,
+            setup="M3UConverterSettings",
+            plugin="Extensions/M3UConverter")
         self.parent = parent
 
     def keySave(self):
@@ -256,7 +389,11 @@ class backsNcoversScreen(Screen, HelpableScreen):
     def onFinish(self):
         self.setTitle((pname + " [%s]") % self.lang)
         if re_search(r'[Ss][0-9]+[Ee][0-9]+', self.text):
-            self.text = sub('[Ss][0-9]+[Ee][0-9]+.*[a-zA-Z0-9_]+', '', self.text, flags=S | I)
+            self.text = sub(
+                '[Ss][0-9]+[Ee][0-9]+.*[a-zA-Z0-9_]+',
+                '',
+                self.text,
+                flags=S | I)
             print("[backsNcovers] ", self.text)
             self.type = 1
             self.getCoverMovie()
@@ -271,16 +408,19 @@ class backsNcoversScreen(Screen, HelpableScreen):
                         # title = str(entries['title'])
                         self.type = 0
                         break
-                    except:
+                    except BaseException:
                         self.type = 1
                         break
                 self.getCoverMovie()
-            except:
-                self['searchinfo'].setText(_("TMDb does not respond, try again later!"))
+            except BaseException:
+                self['searchinfo'].setText(
+                    _("TMDb does not respond, try again later!"))
 
     def onRelaunch(self):
         self.setTitle((pname + " [%s]") % self.lang)
-        self['searchinfo'].setText(_("TMDb search, %s for %s") % (self.text1, self.text))
+        self['searchinfo'].setText(
+            _("TMDb search, %s for %s") %
+            (self.text1, self.text))
         self.getCoverMovie()
 
     def goRed(self):
@@ -298,7 +438,11 @@ class backsNcoversScreen(Screen, HelpableScreen):
         self.manSearch()
 
     def goYellow(self):
-        self.text = sub('[Ss][0-9]+[Ee][0-9]+.*[a-zA-Z0-9_]+', '', self.text, flags=S | I)
+        self.text = sub(
+            '[Ss][0-9]+[Ee][0-9]+.*[a-zA-Z0-9_]+',
+            '',
+            self.text,
+            flags=S | I)
         self.type = 1
         self.getCoverMovie()
 
@@ -317,7 +461,9 @@ class backsNcoversScreen(Screen, HelpableScreen):
         self.onRelaunch()
 
     def manSearch(self):
-        self.session.openWithCallback(self.manSearchCB, VirtualKeyBoard, title=(_("Search for:")), text=self.text)
+        self.session.openWithCallback(
+            self.manSearchCB, VirtualKeyBoard, title=(
+                _("Search for:")), text=self.text)
 
     def manSearchCB(self, text):
         if text:
@@ -331,7 +477,9 @@ class backsNcoversScreen(Screen, HelpableScreen):
             else:
                 self.max = 40
             search = tmdb.Search()
-            self['searchinfo'].setText(_("Loading %s for %s") % (self.text1, self.text) + " ...")
+            self['searchinfo'].setText(
+                _("Loading %s for %s") %
+                (self.text1, self.text) + " ...")
 
             if self.type == 0:
                 search.movie(query=self.text, language=self.lang)
@@ -339,7 +487,8 @@ class backsNcoversScreen(Screen, HelpableScreen):
                 search.tv(query=self.text, language=self.lang)
 
             if not search.results:
-                self['searchinfo'].setText(_("No results found for %s!") % self.text)
+                self['searchinfo'].setText(
+                    _("No results found for %s!") % self.text)
                 return
 
             self.piclist = []
@@ -360,7 +509,8 @@ class backsNcoversScreen(Screen, HelpableScreen):
                     images = identity.images(language=self.lang)
                 except Exception as e:
                     print("[backsNcovers] Network error:", str(e))
-                    self['searchinfo'].setText(_("Network error: cannot reach TMDb"))
+                    self['searchinfo'].setText(
+                        _("Network error: cannot reach TMDb"))
                     return
                 if self.backdrop:
                     for results in images['backdrops']:
@@ -368,7 +518,8 @@ class backsNcoversScreen(Screen, HelpableScreen):
                             id = str(movies['id']) + "-" + str(x)
                             title = str(movies[self.field])
                             coverPath = str(results['file_path'])
-                            coverUrl = "http://image.tmdb.org/t/p/%s%s" % (config.plugins.backsNcovers.themoviedb_coversize.value, coverPath)
+                            coverUrl = "http://image.tmdb.org/t/p/%s%s" % (
+                                config.plugins.backsNcovers.themoviedb_coversize.value, coverPath)
                             urls.append((title, coverUrl, id))
                             x += 1
                             if x > self.max:
@@ -380,7 +531,8 @@ class backsNcoversScreen(Screen, HelpableScreen):
                             id = str(movies['id']) + "-" + str(x)
                             title = str(movies[self.field])
                             coverPath = str(results['file_path'])
-                            coverUrl = "http://image.tmdb.org/t/p/%s%s" % (config.plugins.backsNcovers.themoviedb_coversize.value, coverPath)
+                            coverUrl = "http://image.tmdb.org/t/p/%s%s" % (
+                                config.plugins.backsNcovers.themoviedb_coversize.value, coverPath)
                             urls.append((title, coverUrl, id))
                             x += 1
                             if x > self.max:
@@ -390,15 +542,35 @@ class backsNcoversScreen(Screen, HelpableScreen):
             if len(urls) != 0:
                 self.anz = len(urls)
                 ds = defer.DeferredSemaphore(tokens=self.max)
-                downloads = [ds.run(self.download, url, title, id).addCallback(self.buildList, title, url, id, "movie").addErrback(self.dataError) for title, url, id in urls]
-                defer.DeferredList(downloads).addErrback(self.dataError).addCallback(self.dataFinish)
+                downloads = [
+                    ds.run(
+                        self.download,
+                        url,
+                        title,
+                        id).addCallback(
+                        self.buildList,
+                        title,
+                        url,
+                        id,
+                        "movie").addErrback(
+                        self.dataError) for title,
+                    url,
+                    id in urls]
+                defer.DeferredList(downloads).addErrback(
+                    self.dataError).addCallback(self.dataFinish)
             else:
                 if self.type == 0:
-                    self['searchinfo'].setText(_("No movie results, %s for %s") % (self.text1, self.text))
+                    self['searchinfo'].setText(
+                        _("No movie results, %s for %s") %
+                        (self.text1, self.text))
                 elif self.type == 1:
-                    self['searchinfo'].setText(_("No series results, %s for %s") % (self.text1, self.text))
+                    self['searchinfo'].setText(
+                        _("No series results, %s for %s") %
+                        (self.text1, self.text))
                 else:
-                    self['searchinfo'].setText(_("No results, %s for %s") % (self.text1, self.text))
+                    self['searchinfo'].setText(
+                        _("No results, %s for %s") %
+                        (self.text1, self.text))
                 if not self.lang == "":
                     self.lang = ""
                     self.onRelaunch()
@@ -408,9 +580,23 @@ class backsNcoversScreen(Screen, HelpableScreen):
 
     def download(self, url, title, id):
         if self.backdrop:
-            subprocess.call(["wget", "-q", "--no-use-server-timestamps", "--no-clobber", "--timeout=5", url, "-O", tempDir + title + '_' + id + '-bdp' + '.jpg'])
+            subprocess.call(["wget",
+                             "-q",
+                             "--no-use-server-timestamps",
+                             "--no-clobber",
+                             "--timeout=5",
+                             url,
+                             "-O",
+                             tempDir + title + '_' + id + '-bdp' + '.jpg'])
         else:
-            subprocess.call(["wget", "-q", "--no-use-server-timestamps", "--no-clobber", "--timeout=5", url, "-O", tempDir + title + '_' + id + '.jpg'])
+            subprocess.call(["wget",
+                             "-q",
+                             "--no-use-server-timestamps",
+                             "--no-clobber",
+                             "--timeout=5",
+                             url,
+                             "-O",
+                             tempDir + title + '_' + id + '.jpg'])
 
     def buildList(self, data, title, url, id, type):
         if self.backdrop:
@@ -448,27 +634,39 @@ class backsNcoversScreen(Screen, HelpableScreen):
                         copy(bild, savePath + "folder.jpg")
                     else:
                         copy(bild, savePath + ".jpg")
-            except:
+            except BaseException:
                 print("[backsNcovers] User rights are not sufficiently!")
-                self.session.open(MessageBox, _("Error saving image:\nUser rights insufficient."), MessageBox.TYPE_ERROR)
+                self.session.open(
+                    MessageBox,
+                    _("Error saving image:\nUser rights insufficient."),
+                    MessageBox.TYPE_ERROR)
                 return
         else:
-            self['searchinfo'].setText(_("TMDb result, %s") % (self.text1) + _(" ... not saved!"))
+            self['searchinfo'].setText(
+                _("TMDb result, %s") %
+                (self.text1) + _(" ... not saved!"))
             if not self.closeafter:
-                self.session.open(MessageBox, _("Image not saved.\nMissing source or target path."), MessageBox.TYPE_ERROR)
+                self.session.open(
+                    MessageBox,
+                    _("Image not saved.\nMissing source or target path."),
+                    MessageBox.TYPE_ERROR)
             return
 
         if self.closeafter:
             self.okDelete()
             self.close(False)
         else:
-            self['searchinfo'].setText(_("TMDb result, %s") % (self.text1[:-1]) + _(" ... saved!"))
-            self.session.open(MessageBox, _("Image successfully saved."), MessageBox.TYPE_INFO)
+            self['searchinfo'].setText(_("TMDb result, %s") % (
+                self.text1[:-1]) + _(" ... saved!"))
+            self.session.open(
+                MessageBox,
+                _("Image successfully saved."),
+                MessageBox.TYPE_INFO)
 
     def okDelete(self):
         try:
             rmtree(tempDir)
-        except:
+        except BaseException:
             pass
 
     def dataError(self, error):
@@ -476,9 +674,13 @@ class backsNcoversScreen(Screen, HelpableScreen):
 
     def dataFinish(self, res):
         if self.type == 0:
-            self['searchinfo'].setText(_("TMDb movie results, %s %s for %s") % (self.anz, self.text1, self.text))
+            self['searchinfo'].setText(
+                _("TMDb movie results, %s %s for %s") %
+                (self.anz, self.text1, self.text))
         elif self.type == 1:
-            self['searchinfo'].setText(_("TMDb series results, %s %s for %s") % (self.anz, self.text1, self.text))
+            self['searchinfo'].setText(
+                _("TMDb series results, %s %s for %s") %
+                (self.anz, self.text1, self.text))
         else:
             pass
 
@@ -497,9 +699,11 @@ class createbacksNcoversList(GUIComponent, object):
     def __init__(self):
         GUIComponent.__init__(self)
         self.listbox = eListboxPythonMultiContent()
-        font, size = skin.parameters.get("backsNcoversListFont", ('Regular', 23))
+        font, size = skin.parameters.get(
+            "backsNcoversListFont", ('Regular', 23))
         self.listbox.setFont(0, gFont(font, size))
-        self.listbox.setItemHeight(int(skin.parameters.get("backsNcoversItemHeight", (300,))[0]))
+        self.listbox.setItemHeight(
+            int(skin.parameters.get("backsNcoversItemHeight", (300,))[0]))
         self.listbox.setBuildFunc(self.buildList)
 
     def buildList(self, entry):
@@ -511,11 +715,14 @@ class createbacksNcoversList(GUIComponent, object):
         x, y, w, h = skin.parameters.get("backsNcoversCover", (0, 0, 450, 300))
         self.picloader = PicLoader(w, h)
         bild = self.picloader.load(bild)
-        res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, x, y, w, h, bild))
+        res.append(
+            (eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, x, y, w, h, bild))
         self.picloader.destroy()
 
-        x, y, w, h = skin.parameters.get("backsNcoversName", (500, 100, 670, 100))
-        res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER | RT_WRAP, str(title)))
+        x, y, w, h = skin.parameters.get(
+            "backsNcoversName", (500, 100, 670, 100))
+        res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h,
+                   0, RT_HALIGN_LEFT | RT_VALIGN_CENTER | RT_WRAP, str(title)))
         return res
 
     def getCurrent(self):

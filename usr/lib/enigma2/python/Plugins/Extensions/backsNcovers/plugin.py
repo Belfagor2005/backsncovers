@@ -22,8 +22,27 @@ from . import backsNcovers
 #######################################################################
 
 config.plugins.backsNcovers = ConfigSubsection()
-config.plugins.backsNcovers.themoviedb_coversize = ConfigSelection(default="w500", choices=["w92", "w185", "w500", "original"])
-config.plugins.backsNcovers.language = ConfigSelection(default="en", choices=[("de", "DE"), ("en", "EN"), ("fr", "FR"), ("es", "ES"), ("it", "IT"), ("pl", "PL"), ("ru", "RU"), ("", "All")])
+config.plugins.backsNcovers.themoviedb_coversize = ConfigSelection(
+    default="w500", choices=["w92", "w185", "w500", "original"])
+config.plugins.backsNcovers.language = ConfigSelection(
+    default="en",
+    choices=[
+        ("de",
+         "DE"),
+        ("en",
+         "EN"),
+        ("fr",
+         "FR"),
+        ("es",
+         "ES"),
+        ("it",
+         "IT"),
+        ("pl",
+         "PL"),
+        ("ru",
+         "RU"),
+        ("",
+         "All")])
 config.plugins.backsNcovers.backdrops = ConfigYesNo(default=False)
 config.plugins.backsNcovers.filebot = ConfigYesNo(default=False)
 config.plugins.backsNcovers.closeafter = ConfigYesNo(default=False)
@@ -32,8 +51,12 @@ config.plugins.backsNcovers.closeafter = ConfigYesNo(default=False)
 def main(session, service=None, **kwargs):
     reload(backsNcovers)
     try:
-        session.open(backsNcovers.backsNcoversScreen, service, session.current_dialog, **kwargs)
-    except:
+        session.open(
+            backsNcovers.backsNcoversScreen,
+            service,
+            session.current_dialog,
+            **kwargs)
+    except BaseException:
         import traceback
         traceback.print_exc()
 

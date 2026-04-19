@@ -15,7 +15,11 @@ def localeInit():
     lang = language.getLanguage()[:2]
     environ["LANGUAGE"] = lang
     print("[backsNcovers] set language to ", lang)
-    gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
+    gettext.bindtextdomain(
+        PluginLanguageDomain,
+        resolveFilename(
+            SCOPE_PLUGINS,
+            PluginLanguagePath))
 
 
 def _(txt):

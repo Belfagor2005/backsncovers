@@ -18,33 +18,35 @@ import codecs
 from shutil import copyfile
 from os import remove
 from os.path import isfile
-########################### log file loeschen ##################################
+########################### log file loeschen ############################
 
-myfile="/tmp/tmdb-find.log"
+myfile = "/tmp/tmdb-find.log"
 
 ## If file exists, delete it ##
 if isfile(myfile):
     remove(myfile)
-############################## File copieren ############################################
+############################## File copieren #############################
 
 
-###########################  log file anlegen ##################################
+###########################  log file anlegen ############################
 # kitte888 logfile anlegen die eingabe in logstatus
 
 logstatus = "on"
 
 # ________________________________________________________________________________
 
+
 def write_log(msg):
     if logstatus == ('on'):
         with open(myfile, "a") as log:
 
-            log.write(datetime.date.today().strftime("%Y/%d/%m, %H:%M:%S.%f") + ": " + msg + "\n")
+            log.write(datetime.date.today().strftime(
+                "%Y/%d/%m, %H:%M:%S.%f") + ": " + msg + "\n")
 
             return
     return
 
-# ****************************  test ON/OFF Logfile ************************************************
+# ****************************  test ON/OFF Logfile **********************
 
 
 def logout(data):
